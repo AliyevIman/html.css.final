@@ -1,0 +1,1278 @@
+@import"_mixin.scss";
+@import"_responsive";
+@import "_toys";
+@import "_products";
+@import "_News";
+@import "_section-2-y";
+@import "_section-3-y";
+@import "_section-4-y";
+@import "_section-5-y";
+@import "404";
+
+
+
+
+::selection {
+    background-color: $narinci-aciq;
+    color: #fff;
+}
+
+body {
+    overflow: hidden;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $narinci-aciq;
+}
+
+// ------------LOading Start
+.loading {
+    z-index: 500;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
+    .mini-load {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .spinner {
+            margin: 100px auto;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            text-align: center;
+
+            -webkit-animation: sk-rotate 2.0s infinite linear;
+            animation: sk-rotate 2.0s infinite linear;
+        }
+
+        .dot1,
+        .dot2 {
+            width: 60%;
+            height: 60%;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            background-color: #333;
+            border-radius: 100%;
+
+            -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+            animation: sk-bounce 2.0s infinite ease-in-out;
+        }
+
+        .dot2 {
+            top: auto;
+            bottom: 0;
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+
+        @-webkit-keyframes sk-rotate {
+            100% {
+                -webkit-transform: rotate(360deg)
+            }
+        }
+
+        @keyframes sk-rotate {
+            100% {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg)
+            }
+        }
+
+        @-webkit-keyframes sk-bounce {
+
+            0%,
+            100% {
+                -webkit-transform: scale(0.0)
+            }
+
+            50% {
+                -webkit-transform: scale(1.0)
+            }
+        }
+
+        @keyframes sk-bounce {
+
+            0%,
+            100% {
+                transform: scale(0.0);
+                -webkit-transform: scale(0.0);
+            }
+
+            50% {
+                transform: scale(1.0);
+                -webkit-transform: scale(1.0);
+            }
+        }
+    }
+}
+
+
+
+// <---------HEader Start------------>
+
+#header {
+    background-color: transparent;
+    width: 100%;
+    padding: 0px 10px;
+    position: fixed;
+    background-color: transparent;
+    // position: relative;
+    // position: absolute;
+    z-index: 99;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.35);
+
+    &.active {
+        background-color: #fff;
+
+        .contact {
+            i {
+                color: black !important;
+            }
+        }
+    }
+
+    .logo {
+        width: 20%;
+
+        .img2 {
+            display: none;
+        }
+
+        .img-1 {
+            max-width: 300px;
+            cursor: pointer;
+
+        }
+
+
+    }
+
+    .bars {
+        display: none;
+    }
+
+    // <---Drop Down menu Start--->
+    .menu {
+        width: 60%;
+
+
+
+
+        ul {
+            // height: 100%;
+
+            // <--- Home start--->
+            .home {
+                position: relative;
+                // height: 100%;
+
+                &:hover {
+                    transition: 0.1s ease-in-out;
+
+                    ul {
+                        opacity: 1;
+                        visibility: visible;
+
+
+
+
+                    }
+                }
+
+                ul {
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    top: 100%;
+                    left: -5%;
+                    width: 170px;
+                    height: 400px;
+                    background-color: #ffff;
+                    text-align: start;
+                    padding: 0px 10px;
+
+
+                    li {
+                        padding: 8px;
+
+
+
+                        a {
+                            color: #A8A8A8;
+                            display: block;
+                            font-size: 15px;
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                            font-weight: 400;
+                            padding: 0%;
+                            letter-spacing: 1px;
+                            transition: 500ms all;
+
+                            &:hover {
+                                color: $narinci;
+
+
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            // <---Home end--->
+
+            // <-----SHOP Start---->
+            .shop {
+                &:hover {
+                    .big-menu {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                }
+
+                .big-menu {
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: 500ms all;
+
+                    width: 96%;
+                    left: 2%;
+                    top: 100%;
+                    height: 300px;
+                    background-color: #ffff;
+                    position: absolute;
+
+                    .text-head {
+                        padding-bottom: 20px;
+                        position: relative;
+
+
+
+                        &::before {
+                            content: "";
+                            width: 50px;
+                            height: 1px;
+                            background-color: $narinci;
+                            position: absolute;
+                            bottom: 30%;
+                            left: 0%;
+
+
+                        }
+
+                        a {
+                            font-size: 20px;
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                            font-weight: 600;
+                            color: #2A2B2C;
+                        }
+
+                    }
+
+                    li {
+                        padding: 5px;
+
+                        a {
+                            color: #A8A8A8;
+                            transition: 500ms all;
+
+                            &:hover {
+                                color: $narinci;
+                            }
+                        }
+                    }
+
+                    .litle-menu-4 {
+                        img {
+                            width: 100%;
+                            border-radius: 4px;
+
+                        }
+                    }
+                }
+            }
+
+            // <----Shop end--->
+            // <----Collect Start
+            .collect {
+
+                &:hover {
+                    ul {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                ul {
+                    position: absolute;
+                    top: 100%;
+                    left: 2%;
+                    width: 95%;
+                    height: 250px;
+                    background-color: #fff;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: 500ms all;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        // z-index: 999999999999;
+                        border-radius: 5px;
+                        margin-top: 20px;
+                        cursor: pointer;
+                    }
+
+                    p {
+                        padding: 10px 0;
+                        font-size: 17px;
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        font-weight: bold;
+                        color: $boz;
+                        cursor: pointer;
+                        transition: 0.1s ease-in;
+
+                        &:hover {
+                            color: $narinci;
+                        }
+                    }
+
+
+                }
+            }
+
+            // <---Collect End
+
+            // <----Blog Start---->
+            .blog {
+                position: relative;
+                transition: 1s all;
+
+                &:hover {
+                    ul {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                ul {
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    top: 100%;
+                    left: -5%;
+                    width: 170px;
+                    height: 170px;
+                    background-color: #fff;
+                    text-align: start;
+                    padding: 5px 5px;
+
+
+                    li {
+                        padding: 8px;
+
+                        a {
+                            color: #A8A8A8;
+                            display: block;
+                            font-size: 15px !important;
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                            font-weight: 400;
+                            padding: 0%;
+                            letter-spacing: 1px;
+                            transition: 500ms all;
+
+                            &:hover {
+                                color: $narinci
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            // <----Blog end
+
+
+            // <----Page Start---->
+            .page {
+                position: relative;
+                transition: 500ms all;
+
+                &:hover {
+                    ul {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                ul {
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    top: 100%;
+                    left: -5%;
+                    width: 220px;
+                    height: 220px;
+                    background-color: #ffff;
+                    text-align: start;
+                    padding: 10px 10px;
+
+
+                    li {
+                        padding: 8px;
+
+                        a {
+                            color: #A8A8A8;
+                            display: block;
+                            font-size: 17px;
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                            font-weight: 400;
+                            padding: 0%;
+                            letter-spacing: 1px;
+                            transition: 500ms all;
+
+                            &:hover {
+                                color: $narinci
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            // <----Page end------>
+
+
+            li {
+                padding: 25px 0;
+
+
+                a {
+                    display: inline-block;
+                    color: black;
+                    text-decoration: none;
+                    margin-right: 40px;
+                    font-size: 18px;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-weight: 500;
+
+                }
+
+            }
+        }
+    }
+
+    .contact {
+        width: 20%;
+
+        i {
+            color: black;
+            padding: 11px;
+            font-size: 20px;
+            cursor: pointer;
+            transform: scale(1);
+            transition: 500ms all;
+            &.active{
+                color: black;
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+
+        }
+
+        .shopping-bag {
+            position: relative;
+
+            .shop-0 {
+                position: absolute;
+                top: 0%;
+                right: 0%;
+
+                span {
+                    padding: 2px 4px;
+                    border-radius: 50%;
+                    background-color: $narinci;
+                    font-size: 10px;
+                    color: #ffff;
+                }
+            }
+        }
+    }
+}
+
+// <------------Header End------------>
+
+
+
+// <-----------Footer Satrt --------->
+#footer {
+    width: 100%;
+    // height: 60vh;
+    position: relative;
+    background-image: url(https://cdn.shopify.com/s/files/1/0016/2915/9471/files/bg-2_1512x.jpg?v=1626947531);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 60px;
+    // z-index: 10;
+
+
+    // <-------Footer _TOP start
+    .top-footer {
+        color: #ffff;
+        padding: 30px 0;
+
+        .left-top {
+            border-right: 3px solid $narinci-aciq;
+
+            h4 {
+                color: $narinci-aciq;
+                font-size: 30px;
+            }
+        }
+
+        .right-top {
+            position: relative;
+            width: 100%;
+
+
+            .email {
+                width: 100%;
+                height: 50px;
+                border-radius: 30px;
+                color: #ffff;
+                display: flex;
+                padding: 30px 10px;
+                justify-content: space-between;
+                align-items: center;
+                background-color: $tund-boz;
+
+
+                input {
+                    border: none;
+                    background-color: transparent;
+                    width: 100%;
+                    color: #ffff;
+                    outline: none;
+                }
+
+                i {
+                    color: #ffff;
+                    font-size: 20px;
+                    width: 90px;
+                    height: 40px;
+                    background-color: $narinci-aciq;
+                    line-height: 40px;
+                    text-align: center;
+                    border-radius: 30px;
+                    cursor: pointer;
+                }
+            }
+
+            // .latter {
+            //     position: absolute;
+            //     top: 11%;
+            //     right: -15%;
+            //     width: 90px;
+            //     height: 40px;
+            //     background-color: $narinci-aciq;
+            //     line-height: 40px;
+            //     text-align: center;
+            //     border-radius: 30px;
+            //     cursor: pointer;
+
+
+            // }
+        }
+    }
+
+    // <-----------Footer TOP ENd---------->
+    // <----Midle Footer start--->
+    .midle-footer {
+
+        color: #ffff;
+
+        //    <----Petio--->
+        .petio {
+
+            li {
+                margin-top: 20px;
+
+                p {
+                    color: $boz;
+                    font-size: 17px;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+
+                    a {
+                        color: $narinci-aciq;
+                    }
+                }
+
+
+            }
+
+            .marker {
+                i {
+                    color: $narinci-aciq;
+                    padding-right: 10px;
+                    font-size: 20px;
+                }
+
+                span {
+                    font-size: 19px;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-weight: bold;
+                    margin-left: 10px;
+                    cursor: pointer;
+                    transition: 0.1s ease-in;
+
+                    &:hover {
+                        color: $narinci-aciq;
+                    }
+
+
+                }
+            }
+
+            .sosial {
+                // padding: 20px 0;
+                display: flex;
+                width: 200px;
+                justify-content: space-around;
+
+                i {
+                    // padding: 20px 0;
+                    // padding-right: 20px;
+                    font-size: 20px;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    border-radius: 50%;
+                    color: black;
+                    background-color: #ffff;
+                    cursor: pointer;
+                    transition: 500ms all;
+
+                    &:hover {
+                        background-color: $narinci-aciq;
+                        color: #ffff;
+                    }
+                }
+            }
+
+
+
+
+        }
+
+
+
+        .accordion {
+            display: none;
+
+            button {
+                width: 100%;
+                // background-color: transparent;
+                color: black;
+                display: flex;
+                justify-content: space-between;
+
+            }
+
+            ul {
+
+
+                display: none;
+
+                li {
+                    color: red;
+
+                }
+
+                &.active {
+                    display: block;
+                }
+            }
+
+        }
+
+
+        //    <----Petio--->
+        .corporate {
+
+            ul {
+                .first-text {
+                    padding-bottom: 15px;
+
+                    i {
+                        font-size: 20px;
+                        display: none;
+                    }
+
+                    a {
+                        color: #ffff;
+                        font-size: 20px;
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        font-weight: 500;
+
+                    }
+                }
+
+                li {
+                    padding: 6px 0;
+
+                    a {
+                        color: $boz;
+                        font-size: 18px;
+                        transition: 500ms ease;
+
+                        &:hover {
+                            color: $narinci-aciq;
+
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    hr {
+        color: rgba(255, 255, 255, 0.467);
+    }
+
+    // <----Midle Footer end--->
+    .bottom-footer {
+        padding: 10px 0;
+
+        .left-bottom {
+            p {
+                color: $boz;
+                font-size: 15px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: lighter;
+                margin: auto;
+            }
+        }
+    }
+
+}
+
+// <-----------Footer End --------->
+
+// --------Chat-------------
+#mini-chat {
+    position: fixed;
+    right: 35px;
+    bottom: 70px;
+    transition: 0.1s ease-in-out;
+    right: 1%;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    i {
+        padding: 25px;
+        background-color: $narinci-aciq;
+        color: white;
+        font-size: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+
+
+    }
+}
+
+#chat {
+
+    position: fixed;
+    right: 30px;
+    bottom: 150px;
+
+    // border: 1px solid black;
+    opacity: 0;
+    visibility: hidden;
+    border-top-left-radius: 45px;
+    transform: translateX(100px);
+    transition: 0.3s ease-in-out;
+    width: 350px;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+    }
+
+    header {
+        background-color: $narinci-aciq;
+        padding: 10px 20px;
+        color: #fff;
+        border-top-left-radius: 45px;
+
+
+        .top {
+            text-align: center;
+
+            i {
+                cursor: pointer;
+            }
+
+        }
+
+        .bottom-head {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+
+        }
+    }
+
+    main {
+        background-color: #ffff;
+        height: 300px;
+        overflow-y: scroll;
+        word-wrap: break-word;
+
+        .message {
+            position: relative;
+            margin: 25px;
+            border-radius: 15px;
+
+            &.admin {
+                background-color: darkblue;
+                width: 51%;
+                float: left;
+                color: white;
+                padding: 15px;
+            }
+
+            &.user {
+                // background-color: grey;
+                width: 51%;
+                float: right;
+                color: white;
+                padding: 15px;
+            }
+
+            .time {
+                position: absolute;
+                top: 100%;
+                color: grey;
+                right: 15px;
+            }
+        }
+
+    }
+
+    footer {
+        input {
+            width: 100%;
+            border: 1px solid grey;
+            height: 50px;
+            padding: 10px;
+
+        }
+    }
+}
+
+// --------Chat-------------
+
+// ---------Flying bird---------
+.flying-bird {
+    // display: flex;
+    bottom: 0%;
+    right: 1%;
+    // justify-content: end;
+    // position: absolute;
+    position: fixed;
+    transition: 0.5s ease-in all;
+    z-index: 999999999999999999999999;
+
+    a {
+        display: block;
+
+        .flybird-box {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            // text-align: center;
+            background-color: #ffff;
+            border-radius: 50%;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid black;
+            transition: 0.2s all ease;
+
+            &:hover {
+                background-color: $narinci-aciq;
+                border: $narinci-aciq;
+            }
+
+            img {
+                width: 80%;
+                margin: auto;
+                z-index: 9999999;
+            }
+        }
+    }
+}
+
+// ---------Flying bird---------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:567px) {
+    #header {
+        height: 100%;
+        background-color: #fff;
+
+        .logo {
+            .img-1 {
+                display: block;
+            }
+
+            .img2 {
+                display: none;
+
+            }
+
+        }
+
+        .bars {
+            display: block;
+            order: -1;
+            font-size: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: lighter;
+        }
+
+        .menu {
+            display: none;
+
+            .contact {
+                color: black;
+            }
+        }
+
+        .contact {
+            .searchh {
+                display: none;
+            }
+
+            .user {
+                display: none;
+            }
+        }
+    }
+
+    #footer {
+        height: 100%;
+
+        // width: 100%;
+        .top-footer {
+            border: none;
+            margin-top: 40px;
+
+            .left-top {
+                border: none;
+            }
+
+            .right-top {
+                .latter {
+                    left: 47%;
+                }
+            }
+        }
+
+        .midle-footer {
+            .corporate {
+                .first-text {
+                    i {
+                        display: block;
+                    }
+                }
+
+                ul {
+                    li {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (min-width:567px) and (max-width:768px) {
+    #footer {
+        .midle-footer {
+            .corporate {
+                display: none;
+            }
+
+            .accordion {
+                display: block;
+                text-align: start;
+
+                button {
+                    width: 100%;
+                    background-color: transparent;
+                    border: none;
+                    text-align: start;
+                    margin-bottom: 10px;
+                    color: #fff;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-size: 18px;
+                    font-weight: 500;
+
+
+
+
+                }
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        color: $boz;
+                        text-align: start;
+                        margin-bottom: 10px;
+                        align-items: flex-start;
+
+
+                    }
+                }
+            }
+
+        }
+
+        .bottom-footer {
+            height: 100%;
+            padding: 10px 0;
+
+            .left-bottom {
+
+                p {
+                    font-size: 15px;
+                    margin: auto;
+                }
+            }
+
+
+
+            .right-bottom {
+
+                img {
+                    width: 100%;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    #header {
+        height: 100%;
+        position: relative;
+        background-color: #fff;
+
+        .logo {
+            width: 20%;
+
+
+            .img-1 {
+                display: block;
+            }
+        }
+
+
+        .contact {
+            i {
+                color: rgba(0, 0, 0, 0.713);
+
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+
+        }
+
+        .bars {
+            display: block;
+            order: -1;
+        }
+
+        .menu {
+            display: none;
+        }
+    }
+}
+
+@media (min-width:567px) and (max-width:992px) {
+    #header {
+        height: 100%;
+        width: 80%;
+        margin: auto;
+        position: relative;
+        background-color: #fff;
+
+        .logo {
+            .img2 {
+                display: none;
+            }
+
+            .img-1 {
+                display: block;
+            }
+        }
+
+        .contact {
+            i {
+                color: rgba(0, 0, 0, 0.713);
+
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+
+        }
+
+        .bars {
+            display: block;
+            order: -1;
+            color: rgba(0, 0, 0, 0.713);
+        }
+
+        .menu {
+            display: none;
+        }
+    }
+
+    #footer {
+        height: 100%;
+
+        // width: 100%;
+        .top-footer {
+
+            .left-top {
+                border: none;
+            }
+
+            .right-top {
+                .email {
+                    input {
+                        width: 200px;
+                    }
+                }
+
+                .latter {
+                    left: 47%;
+                }
+            }
+        }
+
+        .bottom-footer {
+            height: 100%;
+            padding: 10px 0;
+
+            .left-bottom {
+
+                p {
+                    font-size: 15px;
+                    margin: auto;
+                }
+            }
+
+
+
+            .right-bottom {
+
+                img {
+                    width: 100%;
+                    margin: auto;
+                }
+            }
+        }
+
+        // .midle-footer{
+
+        // }
+    }
+}
+
+@media(min-width:992px) and (max-width:1200px) {
+    #footer {
+        .bottom-footer {
+            height: 100%;
+            padding: 10px 0;
+
+            .left-bottom {
+
+                p {
+                    font-size: 15px;
+                    margin: auto;
+                }
+            }
+
+
+
+            .right-bottom {
+
+                img {
+                    width: 100%;
+                    margin: auto;
+                }
+            }
+        }
+
+    }
+}

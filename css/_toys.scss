@@ -1,0 +1,1371 @@
+// @import"_mixin";
+// @import"_responsive";
+// @import"style";
+.loading{
+    z-index: 500;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.active{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
+    .mini-load{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .spinner {
+            margin: 100px auto;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            text-align: center;
+            
+            -webkit-animation: sk-rotate 2.0s infinite linear;
+            animation: sk-rotate 2.0s infinite linear;
+          }
+          
+          .dot1, .dot2 {
+            width: 60%;
+            height: 60%;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            background-color: #333;
+            border-radius: 100%;
+            
+            -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+            animation: sk-bounce 2.0s infinite ease-in-out;
+          }
+          
+          .dot2 {
+            top: auto;
+            bottom: 0;
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+          }
+          
+          @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+          @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+          
+          @-webkit-keyframes sk-bounce {
+            0%, 100% { -webkit-transform: scale(0.0) }
+            50% { -webkit-transform: scale(1.0) }
+          }
+          
+          @keyframes sk-bounce {
+            0%, 100% { 
+              transform: scale(0.0);
+              -webkit-transform: scale(0.0);
+            } 50% { 
+              transform: scale(1.0);
+              -webkit-transform: scale(1.0);
+            }
+          }
+    }
+}
+
+
+// <---------HEader Start------------>
+// #header {
+//     background-color: transparent;
+//     width: 100%;
+//     padding: 0px 10px;
+//     position: fixed;
+//     // position: relative;
+//     // position: absolute;
+//     z-index: 99;
+//     border-bottom: 0.5px solid rgba(255, 255, 255, 0.35);
+
+//     &.active {
+//         background-color: #fff;
+//     }
+
+//     .logo {
+//         width: 20%;
+
+
+//         .img-1 {
+//             max-width: 300px;
+//             cursor: pointer;
+
+//         }
+
+
+//     }
+
+//     .bars {
+//         display: none;
+//     }
+
+//     // <---Drop Down menu Start--->
+//     .menu {
+//         width: 60%;
+
+
+
+
+//         ul {
+//             // height: 100%;
+
+//             // <--- Home start--->
+//             .home {
+//                 position: relative;
+//                 // height: 100%;
+
+//                 &:hover {
+//                     transition: 0.1s ease-in-out;
+
+//                     ul {
+//                         opacity: 1;
+//                         visibility: visible;
+
+
+
+
+//                     }
+//                 }
+
+//                 ul {
+//                     opacity: 0;
+//                     visibility: hidden;
+//                     position: absolute;
+//                     top: 100%;
+//                     left: -5%;
+//                     width: 170px;
+//                     height: 400px;
+//                     background-color: #ffff;
+//                     text-align: start;
+//                     padding: 0px 10px;
+
+
+//                     li {
+//                         padding: 8px;
+
+
+
+//                         a {
+//                             color: #A8A8A8;
+//                             display: block;
+//                             font-size: 15px;
+//                             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+//                             font-weight: 400;
+//                             padding: 0%;
+//                             letter-spacing: 1px;
+//                             transition: 500ms all;
+
+//                             &:hover {
+//                                 color: $narinci;
+
+
+//                             }
+
+//                         }
+//                     }
+//                 }
+//             }
+
+//             // <---Home end--->
+
+//             // <-----SHOP Start---->
+//             .shop {
+//                 &:hover {
+//                     .big-menu {
+//                         opacity: 1;
+//                         visibility: visible;
+//                     }
+
+//                 }
+
+//                 .big-menu {
+//                     opacity: 0;
+//                     visibility: hidden;
+//                     transition: 500ms all;
+
+//                     width: 96%;
+//                     left: 2%;
+//                     top: 100%;
+//                     height: 300px;
+//                     background-color: #ffff;
+//                     position: absolute;
+
+//                     .text-head {
+//                         padding-bottom: 20px;
+//                         position: relative;
+
+                       
+
+//                         &::before {
+//                             content: "";
+//                             width: 50px;
+//                             height: 1px;
+//                             background-color: $narinci;
+//                             position: absolute;
+//                             bottom: 30%;
+//                             left: 0%;
+
+
+//                         }
+
+//                         a {
+//                             font-size: 20px;
+//                             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+//                             font-weight: 600;
+//                             color: #2A2B2C;
+//                         }
+
+//                     }
+
+//                     li {
+//                         padding: 5px;
+
+//                         a {
+//                             color: #A8A8A8;
+//                             transition: 500ms all;
+
+//                             &:hover {
+//                                 color: $narinci;
+//                             }
+//                         }
+//                     }
+
+//                     .litle-menu-4 {
+//                         img {
+//                             width: 100%;
+//                             border-radius: 4px;
+
+//                         }
+//                     }
+//                 }
+//             }
+
+//             // <----Shop end--->
+//             // <----Collect Start
+//             .collect {
+
+//                 &:hover {
+//                     ul {
+//                         opacity: 1;
+//                         visibility: visible;
+//                     }
+//                 }
+
+//                 ul {
+//                     position: absolute;
+//                     top: 100%;
+//                     left: 2%;
+//                     width: 95%;
+//                     height: 250px;
+//                     background-color: #fff;
+//                     opacity: 0;
+//                     visibility: hidden;
+//                     transition: 500ms all;
+
+//                     img {
+//                         width: 100%;
+//                         height: 100%;
+//                         // z-index: 999999999999;
+//                         border-radius: 5px;
+//                         margin-top: 20px;
+//                         cursor: pointer;
+//                     }
+
+//                     p {
+//                         padding: 10px 0;
+//                         font-size: 17px;
+//                         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+//                         font-weight: bold;
+//                         color: $boz;
+//                         cursor: pointer;
+//                         transition: 0.1s ease-in;
+
+//                         &:hover {
+//                             color: $narinci;
+//                         }
+//                     }
+
+
+//                 }
+//             }
+
+//             // <---Collect End
+
+//             // <----Blog Start---->
+//             .blog {
+//                 position: relative;
+//                 transition: 1s all;
+
+//                 &:hover {
+//                     ul {
+//                         opacity: 1;
+//                         visibility: visible;
+//                     }
+//                 }
+
+//                 ul {
+//                     opacity: 0;
+//                     visibility: hidden;
+//                     position: absolute;
+//                     top: 100%;
+//                     left: -5%;
+//                     width: 170px;
+//                     height: 170px;
+//                     background-color: #fff;
+//                     text-align: start;
+//                     padding: 5px 5px;
+
+
+//                     li {
+//                         padding: 8px;
+
+//                         a {
+//                             color: #A8A8A8;
+//                             display: block;
+//                             font-size: 15px !important;
+//                             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+//                             font-weight: 400;
+//                             padding: 0%;
+//                             letter-spacing: 1px;
+//                             transition: 500ms all;
+
+//                             &:hover {
+//                                 color: $narinci
+//                             }
+
+//                         }
+//                     }
+//                 }
+//             }
+
+//             // <----Blog end
+
+
+//             // <----Page Start---->
+//             .page {
+//                 position: relative;
+//                 transition: 500ms all;
+
+//                 &:hover {
+//                     ul {
+//                         opacity: 1;
+//                         visibility: visible;
+//                     }
+//                 }
+
+//                 ul {
+//                     opacity: 0;
+//                     visibility: hidden;
+//                     position: absolute;
+//                     top: 100%;
+//                     left: -5%;
+//                     width: 220px;
+//                     height: 220px;
+//                     background-color: #ffff;
+//                     text-align: start;
+//                     padding: 10px 10px;
+
+
+//                     li {
+//                         padding: 8px;
+
+//                         a {
+//                             color: #A8A8A8;
+//                             display: block;
+//                             font-size: 17px;
+//                             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+//                             font-weight: 400;
+//                             padding: 0%;
+//                             letter-spacing: 1px;
+//                             transition: 500ms all;
+
+//                             &:hover {
+//                                 color: $narinci
+//                             }
+
+//                         }
+//                     }
+//                 }
+//             }
+
+//             // <----Page end------>
+
+
+//             li {
+//                 padding: 25px 0;
+
+
+//                 a {
+//                     display: inline-block;
+//                     color: black;
+//                     text-decoration: none;
+//                     margin-right: 40px;
+//                     font-size: 18px;
+//                     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+//                     font-weight: 500;
+
+//                 }
+
+//             }
+//         }
+//     }
+
+//     .contact {
+//         width: 20%;
+
+//         i {
+//             color: #fff !important;
+//             padding: 11px;
+//             font-size: 20px;
+//             cursor: pointer;
+//             transform: scale(1);
+//             transition: 500ms all;
+
+//             &:hover {
+//                 transform: scale(1.1);
+//             }
+
+
+//         }
+
+//         .shopping-bag {
+//             position: relative;
+
+//             .shop-0 {
+//                 position: absolute;
+//                 top: 0%;
+//                 right: 0%;
+
+//                 span {
+//                     padding: 2px 4px;
+//                     border-radius: 50%;
+//                     background-color: $narinci;
+//                     font-size: 10px;
+//                     color: #ffff;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// <------------Header End------------>
+
+
+
+// <----Section-cat start---->
+
+
+.section-cat {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://cdn.shopify.com/s/files/1/0016/2915/9471/files/breadcumd_1512x.jpg?v=1625127338);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 0;
+
+    .center-boxes {
+        width: 80%;
+        margin: auto;
+
+        .text-center {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 20px;
+            color: #fff;
+
+            h1 {
+                font-size: 50px;
+            }
+
+            ul {
+                li {
+                    i {
+                        padding: 0px 5px;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .bottom-center {
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+
+        .boxes {
+            // border: 3px solid black;
+            width: 150px;
+            height: 150px;
+            position: relative;
+            text-align: center;
+
+            .img-text1 {
+                position: relative;
+
+                h6 {
+                    margin-top: 15px;
+                    color: #fff;
+                    font-size: 17px;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-weight: 600;
+                }
+
+                &::before {
+                    content: "";
+                    width: 55%;
+                    position: absolute;
+                    height: 3.3px;
+                    bottom: -30%;
+                    left: 22%;
+                    background-color: $narinci-aciq;
+                }
+
+                h6 {
+                    cursor: pointer;
+                }
+            }
+
+            .img-text {
+                position: relative;
+
+                h6 {
+                    margin-top: 15px;
+                    color: #fff;
+                    font-size: 17px;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+
+                &::before {
+                    content: "";
+                    width: 0%;
+                    position: absolute;
+                    height: 3px;
+                    top: 130%;
+                    left: 50%;
+                    transform: translate(-50%, -130%);
+
+                    background-color: $narinci-aciq;
+                    transition: 500ms all;
+                }
+
+                &:hover {
+                    &::before {
+                        width: 55%;
+                    }
+                }
+            }
+
+
+
+            .img-box {
+                // border: 1px solid green;
+                border-radius: 50%;
+                overflow: hidden;
+                // margin: 0px 10px;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+
+                &:hover:before,
+                ::after {
+                    content: "";
+                    display: block;
+                    border: 2px solid rgba(255, 255, 255, 0.534);
+                    position: absolute;
+                    left: 0%;
+                    // bottom: 0%;
+                    width: 100%;
+                    height: 100%;
+                    top: 0%;
+                    // right: 0%;
+                    border-radius: 100%;
+                    transition: 300ms all;
+                    animation: animate 500ms infinite;
+
+
+
+                }
+
+
+
+
+            }
+
+            .img-box2 {
+                border-radius: 50%;
+                overflow: hidden;
+                // margin: 0px 10px;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    height: 100%;
+                    color: red;
+                    width: 100%;
+                    border-radius: 50%;
+                    border: 2px solid rgba(255, 255, 255, 0.555);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0%;
+                    bottom: 0%;
+                    transform: scale(1.1);
+                }
+
+
+            }
+
+            @keyframes animate {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.8);
+
+                }
+
+                50% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0;
+                    transform: scale(1.2);
+                }
+
+            }
+
+            img {
+                width: 100%;
+            }
+
+
+        }
+    }
+
+
+
+
+
+
+}
+
+// <----Section-cat start---->
+.section-shopping {
+    width: 100%;
+    // height: 100vh;
+    padding: 90px 0;
+
+    // <----Fliter left
+    .filter-left {
+        .price {
+            h5 {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: 600
+            }
+
+            ul {
+                margin: 30px 0;
+
+                li {
+                    &:nth-child(1) {
+                        input {
+                            width: 80px;
+                            padding: 0 25px;
+                            outline: none;
+                            border: 1px solid rgba(0, 0, 0, 0.337);
+
+                            &::placeholder {
+                                color: black;
+                            }
+
+
+                        }
+                    }
+
+                    span {
+                        color: rgba(0, 0, 0, 0.59);
+
+                    }
+
+                    &:nth-child(3) {
+                        input {
+                            width: 80px;
+                            padding: 0 22px;
+
+                            border: 1px solid rgba(0, 0, 0, 0.337);
+                            outline: none;
+
+                            &::placeholder {
+                                color: black;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .range {
+                outline: none;
+                border: none;
+                width: 100%;
+                background-color: $narinci-aciq;
+
+
+            }
+
+            a {
+                display: block;
+                color: black;
+                width: 60px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 15px;
+                font-weight: 500;
+                height: 30px;
+                border: 2px solid rgba(0, 0, 0, 0.466);
+                line-height: 30px;
+                text-align: center;
+                border-radius: 30px;
+                margin: 20px 0;
+                position: relative;
+                overflow: hidden;
+                z-index: 999999999;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0%;
+                    left: 0%;
+                    width: 100%;
+                    height: 0%;
+                    transition: 100ms all ease;
+                    z-index: 0;
+
+
+                }
+
+                &:hover {
+                    border: none;
+
+                    &::before {
+                        content: "Filter";
+                        width: 100%;
+                        height: 100%;
+                        background-color: $narinci-aciq;
+                        color: #fff;
+
+
+                        // top: 100%;
+                    }
+
+
+                }
+
+
+            }
+        }
+
+        .size {
+            ul {
+
+
+
+                li {
+                    margin: 10px 0;
+                    @include input;
+
+
+
+
+                }
+            }
+        }
+
+        .color {
+            @include input3;
+
+            ul {
+
+
+
+                li {
+                    margin: 10px 0;
+                    @include input;
+
+                    label {
+                        span {
+
+                            width: 30px;
+                            height: 30px;
+                            line-height: 15px;
+                            background-color: red;
+                            border-radius: 100%;
+
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .brand {
+            @include input4;
+
+            ul {
+
+
+
+                li {
+                    margin: 10px 0;
+                    // @include input;
+
+
+
+                }
+            }
+        }
+
+        .best-seller {
+            height: 100%;
+
+            .cras {
+                border-bottom: 1px dashed rgba(0, 0, 0, 0.452);
+
+                .left-product {
+                    width: 110px;
+                    height: 90px;
+                    background-image: url(https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-23_100x.jpg?v=1636281259);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    border: 1px solid rgba(0, 0, 0, 0.255);
+                    border-radius: 3px;
+                    padding: 25px 0;
+                    margin-right: 35px;
+
+                }
+
+                .right-product {
+                    .star {
+
+
+                        i {
+                            color: $sari;
+                            font-size: 12px;
+                            margin-bottom: 5px;
+
+                        }
+
+                        span {
+                            font-size: 15px;
+                            color: rgba(0, 0, 0, 0.522);
+                        }
+                    }
+
+                    .texti {
+                        h6 {
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                            font-weight: 600;
+
+                        }
+
+                        p {
+                            color: $narinci-aciq;
+                            font-size: 25px;
+                            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        @include morbi;
+        @include morrbi2;
+        @include purus;
+
+    }
+
+    .tags {
+        .tag-buttons {
+            .catf-btn {
+                width: 90px;
+                height: 35px;
+                line-height: 30px;
+                background-color: #fff;
+                border: 1px solid rgba(0, 0, 0, 0.425);
+                border-radius: 30px;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 10px;
+
+
+                &::before {
+                    content: "Cat Food";
+                    position: absolute;
+                    right: 0%;
+                    top: 0%;
+                    background-color: $narinci-aciq;
+                    width: 0%;
+                    height: 100%;
+                    transition: 0.3s all ease;
+                    cursor: pointer;
+                    color: #fff;
+                    font-size: 13px;
+
+                }
+
+                &:hover {
+
+                    // border: 1px solid $narinci-aciq;
+                    a{
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    &::before {
+                        width: 100%;
+
+
+                        a {
+                            color: #fff;
+
+                        }
+                    }
+                }
+
+                a {
+                    display: inline-block;
+                    color: black;
+                    z-index: 9999;
+                    font-size: 13px;
+
+                }
+            }
+
+            @include dogf;
+            @include dogt;
+            @include fishf;
+        }
+    }
+
+    .shop-zone {
+        .shop-bag {
+            // padding-left: 20px;
+            position: relative;
+
+
+            &:hover {
+
+                // z-index: 0;
+                .img-hidden {
+                    opacity: 1;
+                    visibility: visible;
+                    // z-index: 9999999;
+                }
+
+                .srch {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            .img1 {
+
+                border: 1px solid rgba(0, 0, 0, 0.433);
+                border-radius: 6px;
+                cursor: pointer;
+
+
+            }
+
+
+
+
+            .img-hidden {
+                position: absolute;
+                top: 0%;
+                left: 0%;
+
+                cursor: pointer;
+                border: 1px solid rgba(0, 0, 0, 0.433);
+                border-radius: 6px;
+                transition: 500ms all ease;
+                opacity: 0;
+                visibility: hidden;
+
+            }
+
+            .srch {
+                display: grid;
+                position: absolute;
+                bottom: 55%;
+                right: 5%;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.2s all ease-in-out;
+
+                i {
+                    width: 38px;
+
+                    height: 35px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    border: 1px solid rgba(0, 0, 0, 0.241);
+                    line-height: 30px;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: 0.3s all ease-in-out;
+                    font-size: 20px;
+
+                    &:hover {
+                        background-color: $narinci-aciq;
+                        color: #fff;
+                    }
+                }
+            }
+
+
+        }
+
+        .star {
+
+            i {
+                color: $sari;
+                font-size: 12px;
+                margin: 15px 0;
+
+
+            }
+
+            span {
+                font-size: 15px;
+                color: rgba(0, 0, 0, 0.522);
+
+            }
+
+            .texti {
+                h6 {
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-weight: 600;
+                    transition: 0.2S all ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $narinci-aciq
+                    }
+
+                }
+
+                p {
+                    color: $narinci-aciq;
+                    font-size: 23px;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        
+
+        .bottom-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        a{
+            display: inline-block;
+           
+            width: 45px;
+            height: 45px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.404);
+            line-height: 45px;
+            text-align: center;
+            color: black;
+            margin: 0 3px;
+            transition: 0.2s ease;
+            &:hover{
+                background-color: black;
+                color: #fff;
+                i{
+                    color: #fff;
+                }
+            }
+            i{
+                color: black;
+                font-size: 22px;
+                font-weight: lighter;
+            }
+        }
+        .a--1{
+            background-color: black;
+            color: #fff;
+        }
+
+        }
+
+    }
+
+}
+
+// <----Fliter left end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:567px) {
+    #header {
+        height: 100%;
+        background-color: #fff;
+
+        .logo {
+            .img-1{
+                display: block;
+            }
+            .img2{
+                display: none;
+              
+            }
+
+        }
+
+        .bars {
+            display: block;
+            order: -1;
+            font-size: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: lighter;
+        }
+
+        .menu {
+            display: none;
+        }
+    }
+
+    #footer {
+        height: 100%;
+
+        // width: 100%;
+        .top-footer {
+            border: none;
+            margin-top: 40px;
+
+            .left-top {
+                border: none;
+            }
+
+            .right-top {
+                .latter {
+                    left: 47%;
+                }
+            }
+        }
+
+        .midle-footer {
+            .corporate {
+                .first-text {
+                    i {
+                        display: block;
+                    }
+                }
+
+                ul {
+                    li {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .section-cat {
+        .bottom-center {
+            .dog-t {
+                display: none;
+            }
+
+            .dog-f {
+                display: none;
+            }
+
+            .cat-t {
+                display: none;
+            }
+
+        }
+    }
+
+    .section-shopping {
+        .filter-left {
+            display: none;
+
+        }
+    }
+}
+
+@media(min-width:567px) and (max-width: 768px) {
+    #header {
+        height: 100%;
+        background-color: #fff;
+
+      
+
+        .bars {
+            display: block;
+            order: -1;
+            font-size: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: lighter;
+        }
+
+        .menu {
+            display: none;
+        }
+    }
+
+    .section-cat {
+        .bottom-center {
+            .dog-t {
+                display: none;
+            }
+
+            .dog-f {
+                display: none;
+            }
+
+
+        }
+    }
+
+    .section-shopping {
+        .filter-left {
+            display: none;
+
+        }
+    }
+
+}
+
+
+
+
+
+
+@media (min-width:768px) and (max-width:992px) {
+    #header {
+        height: 100%;
+      
+
+        .bars {
+            display: block;
+            order: -1;
+            color: rgba(0, 0, 0, 0.713);
+        }
+
+        .menu {
+            display: none;
+        }
+    }
+
+   
+    #footer {
+        height: 100%;
+
+        // width: 100%;
+        .top-footer {
+
+            .left-top {
+                border: none;
+            }
+
+            .right-top {
+                .email {
+                    input {
+                        width: 200px;
+                    }
+                }
+
+                .latter {
+                    left: 47%;
+                }
+            }
+        }
+
+        // .midle-footer{
+
+        // }
+    }
+
+    .section-cat {
+        .bottom-center {
+            .dog-t {
+                display: none;
+            }
+
+            .cat-t {
+                cursor: pointer;
+            }
+
+
+        }
+    }
+
+    .section-shopping {
+        .filter-left {
+            display: none;
+
+        }
+    }
+}
