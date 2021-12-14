@@ -395,7 +395,7 @@ $sari:#FFC107;
             background-color: $narinci-aciq;
             width: 0%;
             height: 100%;
-            transition: 0.3s all ease;
+            transition: 0.2s all ease;
             cursor: pointer;
             color: #fff;
             font-size: 13px;
@@ -440,6 +440,8 @@ $sari:#FFC107;
 
 
         &::before {
+            border-radius: 30px;
+
             content: "Dog Toys";
             position: absolute;
             right: 0%;
@@ -447,7 +449,7 @@ $sari:#FFC107;
             background-color: $narinci-aciq;
             width: 0%;
             height: 100%;
-            transition: 0.3s all ease;
+            transition: 0.2s all ease;
             cursor: pointer;
             color: #fff;
             font-size: 13px;
@@ -499,7 +501,7 @@ $sari:#FFC107;
             background-color: $narinci-aciq;
             width: 0%;
             height: 100%;
-            transition: 0.3s all ease;
+            transition: 0.2s all ease;
             cursor: pointer;
             color: #fff;
             font-size: 13px;
@@ -547,20 +549,21 @@ $sari:#FFC107;
         // padding: 120px 0;
         // padding-bottom: 80px;
         // padding: 60px 0;
-    
+
         .center-boxes {
             width: 80%;
             margin: auto;
+
             .text-center {
                 width: 100%;
                 height: 100%;
                 // margin-bottom: 20px;
                 color: #fff;
-    
+
                 h1 {
                     font-size: 50px;
                 }
-    
+
                 ul {
                     li {
                         i {
@@ -568,17 +571,17 @@ $sari:#FFC107;
                         }
                     }
                 }
-    
+
             }
-    
+
         }
-    
-     
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     }
 }
 
@@ -597,12 +600,14 @@ $sari:#FFC107;
         font-weight: 500;
     }
 }
+
 @mixin blog {
     margin-top: 20px;
     border-bottom: 1px dashed black;
     width: 100%;
 
 }
+
 @mixin blog-texts {
     .travel-img {
         margin: 0 20px;
@@ -623,9 +628,10 @@ $sari:#FFC107;
         margin: 0%;
         display: grid;
         justify-content: flex-start;
+
         span {
             font-size: 12px;
-           
+
         }
 
         p {
@@ -636,23 +642,25 @@ $sari:#FFC107;
             transition: 0.3s all ease-in;
             cursor: pointer;
 
-            &:hover{
+            &:hover {
                 color: $narinci-aciq;
             }
         }
     }
 }
+
 // recent---posts--------
 
 // -----blog-----
 
-@mixin travelling-text{
+@mixin travelling-text {
     .travelling-text {
-           
-        span{
+
+        span {
             color: $boz;
         }
-        p{
+
+        p {
             color: $boz;
             max-width: 100%;
             font-size: 14px;
@@ -660,35 +668,39 @@ $sari:#FFC107;
         }
 
         .travelling-bottom {
-            span{
+            span {
                 margin-right: 10px;
                 color: $boz;
             }
-            i{
+
+            i {
                 color: $boz;
-                margin:0 5px;
+                margin: 0 5px;
                 font-size: 14px;
                 cursor: pointer;
                 transition: 0.2s all ease-in-out;
-                &:hover{
+
+                &:hover {
                     color: $narinci-aciq;
                 }
             }
-            .text-button{
-              
-                a{
+
+            .text-button {
+
+                a {
                     width: 120px;
                     height: 40;
                     line-height: 40px;
                     display: block;
-                   
+
                     text-align: center;
                     background-color: $narinci-aciq;
                     border-radius: 30px;
                     color: #fff;
                     text-decoration: none;
                     transition: 0.3s all ease-in-out;
-                    &:hover{
+
+                    &:hover {
                         background-color: black;
                     }
                 }
@@ -696,5 +708,5 @@ $sari:#FFC107;
         }
     }
 }
-// -----blog-----
 
+// -----blog-----

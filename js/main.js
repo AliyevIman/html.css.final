@@ -24,7 +24,7 @@ window.onload = function () {
         document.querySelector(".loading").classList.add("d-none")
         document.body.style.overflowY = "scroll"
 
-    }, 200);
+    }, 500);
 
 
     // document.querySelector(".loading").classList.add("active")
@@ -102,7 +102,7 @@ inpmessage.addEventListener("keyup", function (a) {
 var icons = document.querySelectorAll(".contact i")
 var header = document.querySelector("#header")
 window.onscroll = function () {
-    if (this.scrollY > 100) {
+    if (this.scrollY > 150) {
         header.classList.add("active")
     //    icons.style.color="green"
 

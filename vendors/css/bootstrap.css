@@ -588,10 +588,6 @@ progress {
   font-size: 0.875em;
   color: #6c757d;
 }
-.custom-container{
-  width: 95%;
-  margin:auto;
-}
 
 .container,
 .container-fluid,
