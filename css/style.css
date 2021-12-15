@@ -4169,7 +4169,6 @@ body a {
 
 #section-yasuo .sect-left {
   height: 100%;
-  border: 1px solid red;
 }
 
 #section-yasuo .sect-left img {
@@ -4265,6 +4264,8 @@ body a {
   border: 1px solid gray;
   margin-right: 7px;
   cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 #section-team .team-box .team-box-right i:hover {
